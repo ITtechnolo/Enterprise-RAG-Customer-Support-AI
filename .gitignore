@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+vector_store/index.faiss
+vector_store/index.pkl
+support_agent.log
+.vscode/
+.idea/
+venv/
+env/
+node_modules/
