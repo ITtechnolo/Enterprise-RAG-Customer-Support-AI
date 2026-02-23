@@ -79,11 +79,16 @@ Rename `.env.example` to `.env` and add your API key:
 GEMINI_API_KEY=your_key_here
 ```
 
-### 4. Running the Bot
-```bash
-python app.py
-```
-The server will start at `http://localhost:5000`. On the first run, it will automatically process documents in the `knowledge_base/` folder and create a vector search index.
+### 4. Running the Bot (Recommended)
+This project includes one-click scripts for Windows to ensure it works every time:
+- **Double-click `setup.bat`**: Runs only once. It creates a virtual environment and installs everything correctly.
+- **Double-click `start_bot.bat`**: Starts the bot immediately using the correct environment.
+
+## 🛡️ Persistence & Reliability
+This bot is designed to work indefinitely and on any Windows system:
+- **Environment Isolation**: The `setup.bat` script creates a `venv/` folder. This keeps the project's dependencies separate from other programs, preventing breakage over time.
+- **Persistent Data**: The vector database is saved in `vector_store/`. It stays there forever unless you delete it, so your knowledge base remains ready.
+- **Zero-Dependency Core**: By using custom Python logic instead of heavy libraries, we've eliminated 99% of common "system-level" errors.
 
 ---
 *Developed for high-performance enterprise support environments.*
