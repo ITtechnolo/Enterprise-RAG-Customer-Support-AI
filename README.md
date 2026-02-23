@@ -25,18 +25,17 @@ The system follows a classic RAG pattern, enhanced with semantic chunking and st
 ## 📦 Project Structure
 
 ```text
-enterprise-rag-bot/
+.
 ├── app.py              # Flask server and API endpoints
 ├── rag/                # Core RAG logic package
 │    ├── ingest.py      # Document loading and splitting
 │    ├── retriever.py   # FAISS vector store management
 │    ├── prompt.py      # Strict system prompt definitions
 │    └── generator.py   # Gemini API interaction logic
-├── vector_store/       # Local storage for FAISS indices
+├── vector_store/       # Persistent FAISS indices (Local Storage)
 ├── knowledge_base/     # Source documents for the AI
 ├── templates/          # HTML UI templates
-├── static/             # CSS and JS assets
-└── .env                # Project configuration
+└── .env                # Project configuration (Git Ignored)
 ```
 
 ## 🛡️ Anti-Hallucination Features
@@ -55,11 +54,24 @@ enterprise-rag-bot/
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd enterprise-rag-bot
+cd "Enterprise RAG Customer Support AI"
 
 # Install dependencies
 pip install -r requirements.txt
 ```
+
+### 3. Example Questions to Ask
+Test the bot's accuracy and strict policy with these queries:
+- **"What is your standard SLA for cloud services?"** (Context: 99.9% uptime)
+- **"How long does a refund take?"** (Context: 10 business days)
+- **"Is my data encrypted?"** (Context: AES-256 and TLS 1.3)
+- **"Who is the CEO of the company?"** (Expected: "I don't have enough information...")
+
+### 4. Persistence & Reliability
+This bot is designed to run indefinitely and on any system:
+- **Local FAISS Index**: The vector database is saved to the `vector_store/` folder. It persists even if you restart the server days later.
+- **Auto-Ingestion**: If you move the project to a new computer, the system will automatically re-index the `knowledge_base/` on the first run.
+- **Environment Isolation**: All dependencies are locked in `requirements.txt` for 100% reproducibility.
 
 ### 3. Configuration
 Rename `.env.example` to `.env` and add your API key:
