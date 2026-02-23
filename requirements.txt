@@ -1,9 +1,5 @@
-flask
-python-dotenv
-pypdf
 google-genai
 numpy
-faiss-cpu
-langchain
-langchain-google-genai
-langchain-community
+pypdf
+flask
+python-dotenv

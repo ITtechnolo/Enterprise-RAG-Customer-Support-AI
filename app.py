@@ -1,5 +1,12 @@
 import os
 import logging
+import warnings
+
+# Suppress irrelevant background dependency warnings
+os.environ["TRANSFORMERS_VERBOSITY"] = "error"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+warnings.filterwarnings("ignore", category=UserWarning)
+
 from flask import Flask, render_template, request, jsonify
 from dotenv import load_dotenv
 from rag.ingest import load_documents, get_text_chunks
